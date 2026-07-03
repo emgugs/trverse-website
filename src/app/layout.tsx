@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Urbanist } from "next/font/google";
 import JsonLd from "@/components/seo/JsonLd";
-import { organizationJsonLd, websiteJsonLd } from "@/lib/seo-jsonld";
+import { websiteJsonLd } from "@/lib/seo-jsonld";
 import { DEFAULT_DESCRIPTION, DEFAULT_OG_IMAGE, absoluteUrl } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -53,7 +53,7 @@ export default function RootLayout({
       className={`${urbanist.variable}`}
     >
       <body>
-        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
+        <JsonLd data={websiteJsonLd()} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-6015NQ5BW5"
           strategy="afterInteractive"

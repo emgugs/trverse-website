@@ -9,6 +9,8 @@ import Impact from "@/components/Impact";
 import Insights from "@/components/Insights";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/seo/JsonLd";
+import { organizationJsonLd } from "@/lib/seo-jsonld";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <JsonLd data={organizationJsonLd()} />
       <Nav />
       <Hero />
       <HomeAwards />

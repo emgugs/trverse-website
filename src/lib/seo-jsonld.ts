@@ -1,15 +1,30 @@
-import { SITE_NAME, SITE_URL } from "@/lib/site";
-import { DEFAULT_DESCRIPTION } from "@/lib/seo";
+import {
+  ORGANIZATION_LOGO_PATH,
+  ORGANIZATION_NAME,
+  ORGANIZATION_SOCIAL_PROFILES,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
+import { DEFAULT_DESCRIPTION, absoluteUrl } from "@/lib/seo";
 
 export function organizationJsonLd() {
+  const logoUrl = absoluteUrl(ORGANIZATION_LOGO_PATH);
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: SITE_NAME,
+    "@id": `${SITE_URL}/#organization`,
+    name: ORGANIZATION_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/favicon.webp`,
+    logo: {
+      "@type": "ImageObject",
+      url: logoUrl,
+      contentUrl: logoUrl,
+      width: 128,
+      height: 128,
+    },
     description: DEFAULT_DESCRIPTION,
-    sameAs: ["https://www.linkedin.com/company/trverse"],
+    sameAs: [...ORGANIZATION_SOCIAL_PROFILES],
   };
 }
 
@@ -71,11 +86,11 @@ export function articleJsonLd({
     },
     publisher: {
       "@type": "Organization",
-      name: SITE_NAME,
+      name: ORGANIZATION_NAME,
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/favicon.webp`,
+        url: absoluteUrl(ORGANIZATION_LOGO_PATH),
       },
     },
     mainEntityOfPage: {
