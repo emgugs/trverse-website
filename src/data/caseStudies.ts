@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Makkah, Saudi Arabia",
     summary:
       "LMKR and TRVERSE delivered the first electric Bus Rapid Transit network at Masar Destination, a landmark mixed-use development in Makkah, providing clean, high-capacity mobility aligned with Saudi Arabia's sustainability commitments.",
-    heroImage: "/assets/masar.png",
+    heroImage: "/assets/masar.webp",
     headline:
       "The first electric BRT network in Makkah, where mobility meets Vision 2030.",
     factSheet: [
@@ -166,7 +166,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Lahore, Pakistan",
     summary:
       "Punjab Mass Transit Authority partnered with LMKR and TRVERSE to deliver integrated security, surveillance, KPI monitoring, and helpdesk across Lahore MetroBus feeder operations, giving 180,000+ daily commuters a safer, better-managed journey.",
-    heroImage: "/assets/lahore-metro.png",
+    heroImage: "/assets/lahore-metro.webp",
     headline:
       "Integrated security and operational monitoring for Pakistan's second city.",
     factSheet: [

@@ -2,9 +2,37 @@
 
 import React from 'react';
 
+const HERO_VIDEO_SRC =
+  "https://res.cloudinary.com/dl3ulxgq4/video/upload/f_auto,q_auto/v1781267116/trverse-web-banner_latest_version_avtmpu.mp4";
+
 const Hero = () => {
   const [loaded, setLoaded] = React.useState(false);
-  React.useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
+  const [shouldLoadVideo, setShouldLoadVideo] = React.useState(false);
+
+  React.useEffect(() => {
+    const frame = window.requestAnimationFrame(() => setLoaded(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  React.useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    const enableVideo = () => setShouldLoadVideo(true);
+    let timeoutId: number | undefined;
+    let idleId: number | undefined;
+
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(enableVideo, { timeout: 2000 });
+    } else {
+      timeoutId = window.setTimeout(enableVideo, 1500);
+    }
+
+    return () => {
+      if (idleId !== undefined) window.cancelIdleCallback(idleId);
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   const reveal = (delay: string) => ({
     opacity: loaded ? 1 : 0,
@@ -178,17 +206,17 @@ const Hero = () => {
       <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0 }}>
         <video
           className="home-hero-video"
-          autoPlay
+          autoPlay={shouldLoadVideo}
           muted
           loop
           playsInline
-          preload="auto"
-          aria-label="Background video"
+          preload="none"
+          poster="/assets/about-hero-banner.webp"
+          aria-hidden
         >
-          <source
-            src="https://res.cloudinary.com/dl3ulxgq4/video/upload/v1781267116/trverse-web-banner_latest_version_avtmpu.mp4"
-            type="video/mp4"
-          />
+          {shouldLoadVideo ? (
+            <source src={HERO_VIDEO_SRC} type="video/mp4" />
+          ) : null}
         </video>
         <div style={{
           position: 'absolute', inset: 0,

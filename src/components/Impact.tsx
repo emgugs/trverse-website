@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from "next/image";
 import Link from "next/link";
 import PartnerMarquee from './PartnerMarquee';
 import { caseStudies } from "@/data/caseStudies";
@@ -75,8 +76,6 @@ const Impact = () => {
           overflow: hidden;
         }
         .impact-image {
-          width: 100%;
-          height: 100%;
           object-fit: cover;
           transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
@@ -125,8 +124,13 @@ const Impact = () => {
             <Link key={p.slug} href={`/case-studies/${p.slug}`} style={{ textDecoration: 'none' }}>
               <div className="impact-card">
               <div className="impact-image-container">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.image} alt={p.name} className="impact-image" />
+                <Image
+                  src={p.image}
+                  alt={p.name}
+                  className="impact-image"
+                  fill
+                  sizes="(max-width: 700px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
                 <div className="impact-overlay"></div>
 
                 {/* Result Overlay on Image Area */}

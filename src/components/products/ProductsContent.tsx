@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import { DeviceItemsCarousel } from "@/components/products/DeviceItemsCarousel";
 
@@ -509,11 +510,12 @@ function ProductMockupFrame({ slug }: { slug: string; label?: string }) {
           </div>
         </div>
         <div style={{ position: "relative", aspectRatio: "16 / 10", background: "#f4f7fb" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={PRODUCT_MOCKUPS[slug] ?? PLACEHOLDER}
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            style={{ objectFit: "contain" }}
           />
         </div>
       </div>

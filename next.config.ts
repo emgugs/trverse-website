@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
+import { STATIC_ASSET_CACHE_HEADERS } from "./src/lib/cache-headers";
 import { SECURITY_HEADERS } from "./src/lib/security-headers";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ["image/avif", "image/webp"],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
         protocol: "https",
@@ -15,6 +20,46 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: SECURITY_HEADERS,
+      },
+      {
+        source: "/_next/static/:path*",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/assets/:path*",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/products/:path*",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/solutions/:path*",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/insights/:path*",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/partners-logo/:path*",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/:path*.webp",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/:path*.avif",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/:path*.svg",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/:path*.woff2",
+        headers: STATIC_ASSET_CACHE_HEADERS,
       },
     ];
   },

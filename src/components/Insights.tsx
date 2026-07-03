@@ -6,18 +6,28 @@ import { insights } from "@/data/insights";
 import InsightCardThumbnail from "@/components/insights/InsightCardThumbnail";
 
 const Insights = () => {
-  const [viewportWidth, setViewportWidth] = React.useState(1280);
+  const [visibleCount, setVisibleCount] = React.useState(3);
   const homeInsights = [...insights]
     .sort((a, b) => new Date(b.datePublishedIso).getTime() - new Date(a.datePublishedIso).getTime())
     .slice(0, 8);
   React.useEffect(() => {
-    const update = () => setViewportWidth(window.innerWidth);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
+    const mobile = window.matchMedia("(max-width: 759px)");
+    const tablet = window.matchMedia("(max-width: 1079px)");
 
-  const visibleCount = viewportWidth < 760 ? 1 : viewportWidth < 1080 ? 2 : 3;
+    const update = () => {
+      if (mobile.matches) setVisibleCount(1);
+      else if (tablet.matches) setVisibleCount(2);
+      else setVisibleCount(3);
+    };
+
+    update();
+    mobile.addEventListener("change", update);
+    tablet.addEventListener("change", update);
+    return () => {
+      mobile.removeEventListener("change", update);
+      tablet.removeEventListener("change", update);
+    };
+  }, []);
   const maxStartIndex = Math.max(0, homeInsights.length - visibleCount);
   const [startIndex, setStartIndex] = React.useState(0);
 

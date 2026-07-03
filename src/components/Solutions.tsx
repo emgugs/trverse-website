@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from "next/image";
 import Link from 'next/link';
 
 const Solutions = () => {
@@ -8,7 +9,7 @@ const Solutions = () => {
     { 
       title: 'Automated Fare Collection', 
       desc: 'Flexible payment systems that support contactless, card, and mobile transactions across transit networks.', 
-      banner: `/solutions/${encodeURIComponent('automated fare collection.png')}`,
+      banner: `/solutions/${encodeURIComponent('automated fare collection.webp')}`,
       href: '/solutions/Automated-fare-collection',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="3" stroke="var(--accent)" strokeWidth="1.8"/><line x1="3" y1="11" x2="25" y2="11" stroke="var(--accent)" strokeWidth="1.8"/><rect x="6" y="17" width="8" height="2" rx="1" fill="var(--accent)" opacity="0.4"/></svg>
@@ -17,7 +18,7 @@ const Solutions = () => {
     { 
       title: 'Intelligent Transport Systems', 
       desc: 'Real-time monitoring and control across vehicles, routes, and passenger information.', 
-      banner: '/solutions/intelligent-transport-system.png',
+      banner: '/solutions/intelligent-transport-system.webp',
       href: '/solutions/Intelligent-transport-systems',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="var(--accent)" strokeWidth="1.8"/><path d="M14 8v6l4 3" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round"/></svg>
@@ -26,7 +27,7 @@ const Solutions = () => {
     { 
       title: 'Advanced Scheduling System', 
       desc: 'Plan and adjust services using real-time and historical data for optimized fleet utilization.', 
-      banner: '/solutions/AI-based-scheduling.png',
+      banner: '/solutions/AI-based-scheduling.webp',
       href: '/solutions/advanced-scheduling-system',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20l5-6 4 3 5-8 6 7" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><circle cx="9" cy="14" r="2" fill="var(--accent)" opacity="0.3"/><circle cx="18" cy="9" r="2" fill="var(--accent)" opacity="0.3"/></svg>
@@ -35,7 +36,7 @@ const Solutions = () => {
     { 
       title: 'Fleet Management', 
       desc: 'Manage operations from a single command environment with live tracking and insights.', 
-      banner: '/solutions/control-room-managmeent.png',
+      banner: '/solutions/control-room-managmeent.webp',
       href: '/solutions/fleet-management',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="4" width="24" height="16" rx="2" stroke="var(--accent)" strokeWidth="1.8"/><line x1="8" y1="24" x2="20" y2="24" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round"/><line x1="14" y1="20" x2="14" y2="24" stroke="var(--accent)" strokeWidth="1.8"/></svg>
@@ -54,7 +55,7 @@ const Solutions = () => {
     { 
       title: 'AI Monitoring and Control', 
       desc: 'Comprehensive analytics for operators to track network health and efficiency in real-time.', 
-      banner: '/solutions/performance-monitoring-card.png',
+      banner: '/solutions/performance-monitoring-card.webp',
       href: '/solutions/ai-monitoring-and-control',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="14" width="4" height="10" rx="1" fill="var(--accent)" opacity="0.3"/><rect x="12" y="8" width="4" height="16" rx="1" fill="var(--accent)" opacity="0.5"/><rect x="20" y="4" width="4" height="20" rx="1" fill="var(--accent)" opacity="0.7"/></svg>
@@ -142,8 +143,6 @@ const Solutions = () => {
               position: relative;
             }
             .solution-banner {
-              width: 100%;
-              height: 100%;
               object-fit: cover;
               object-position: bottom center;
               transition: transform 0.5s ease;
@@ -184,11 +183,12 @@ const Solutions = () => {
                 </svg>
               </div>
               <div className="solution-banner-container">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={s.banner}
                   alt={s.title}
                   className="solution-banner"
+                  fill
+                  sizes="(max-width: 700px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   style={
                     "bannerPosition" in s && s.bannerPosition
                       ? { objectPosition: s.bannerPosition, transformOrigin: s.bannerPosition }
