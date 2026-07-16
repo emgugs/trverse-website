@@ -16,6 +16,8 @@ export const ORGANIZATION_NAME = "TRVERSE";
 export const ORGANIZATION_LOGO_PATH = "/favicon.webp";
 export const ORGANIZATION_SOCIAL_PROFILES = [
   "https://www.linkedin.com/company/trverse-official",
+  "https://www.facebook.com/TrverseOfficial",
+  "https://www.instagram.com/TrverseOfficial/",
 ] as const;
 export const SITE_TAGLINE =
   "Mass transit AFC, ITS, fleet management, and AI monitoring for transport networks worldwide.";

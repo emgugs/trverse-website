@@ -5,6 +5,12 @@ import { officeFooterLabels } from '@/data/offices';
 import { homeAwards } from '@/data/homeAwards';
 import { accreditations } from '@/data/accreditations';
 
+const footerSocialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/trverse-official" },
+  { label: "Facebook", href: "https://www.facebook.com/TrverseOfficial" },
+  { label: "Instagram", href: "https://www.instagram.com/TrverseOfficial/" },
+];
+
 const Footer = () => (
   <footer className="home-footer" style={{ background: '#040e1f', padding: '64px 48px 40px' }}>
     <style dangerouslySetInnerHTML={{ __html: `
@@ -42,6 +48,31 @@ const Footer = () => (
       }
       .home-footer-brand-recognition + .home-footer-brand-recognition {
         margin-top: 28px;
+      }
+      .home-footer-social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+      .home-footer-social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.12);
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.72);
+        text-decoration: none;
+        transition: color 0.2s, border-color 0.2s, background 0.2s;
+      }
+      .home-footer-social-link:hover {
+        color: #fff;
+        border-color: rgba(255,130,93,0.45);
+        background: rgba(255,130,93,0.12);
       }
       .home-footer-recognition-title {
         font-family: var(--font-body);
@@ -106,6 +137,19 @@ const Footer = () => (
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, maxWidth: 280 }}>
             Connecting transit systems for better city mobility.
           </p>
+          <div className="home-footer-social-links" aria-label="TRVERSE social links">
+            {footerSocialLinks.map((link) => (
+              <a
+                key={link.label}
+                className="home-footer-social-link"
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
 
           <div className="home-footer-brand-recognition">
             <h4 className="home-footer-recognition-title">Awards &amp; Recognition</h4>
