@@ -67,7 +67,7 @@ const SolutionsHero = () => {
           }}
         >
           <source
-            src="/video/trverse-solution-page-web-banner.mp4"
+            src="https://objectstorage.me-dubai-1.oraclecloud.com/n/axkcoovttfwl/b/bucket-dockploy/o/traverse-assets%2Ftrverse-solution-page-web-banner.mp4"
             type="video/mp4"
           />
         </video>

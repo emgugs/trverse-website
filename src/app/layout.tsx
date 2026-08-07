@@ -56,6 +56,7 @@ export default function RootLayout({
       className={`${urbanist.variable}`}
     >
       <head>
+        <link rel="preconnect" href="https://objectstorage.me-dubai-1.oraclecloud.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body>
