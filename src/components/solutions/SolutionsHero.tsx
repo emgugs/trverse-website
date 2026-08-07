@@ -41,7 +41,7 @@ const SolutionsHero = () => {
         }
       `}} />
 
-      {/* Background video (Cloudinary) */}
+      {/* Background video */}
       <div style={{
         position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0
       }}>
@@ -67,7 +67,7 @@ const SolutionsHero = () => {
           }}
         >
           <source
-            src="https://res.cloudinary.com/dl3ulxgq4/video/upload/v1781268595/trverse-solution-page-web-banner_li4mcg.mp4"
+            src="/video/trverse-solution-page-web-banner.mp4"
             type="video/mp4"
           />
         </video>

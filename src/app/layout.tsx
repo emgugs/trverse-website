@@ -56,7 +56,6 @@ export default function RootLayout({
       className={`${urbanist.variable}`}
     >
       <head>
-        <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body>

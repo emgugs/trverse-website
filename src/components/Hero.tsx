@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-const HERO_VIDEO_SRC =
-  "https://res.cloudinary.com/dl3ulxgq4/video/upload/f_auto,q_auto/v1781267116/trverse-web-banner_latest_version_avtmpu.mp4";
+const HERO_VIDEO_SRC = "/video/trverse-web-banner-latest-version.mp4";
 
 const Hero = () => {
   const [loaded, setLoaded] = React.useState(false);

@@ -8,12 +8,6 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
   },
   async headers() {
     return [
@@ -43,6 +37,10 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/partners-logo/:path*",
+        headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+      {
+        source: "/video/:path*",
         headers: STATIC_ASSET_CACHE_HEADERS,
       },
       {
