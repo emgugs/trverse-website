@@ -16,6 +16,7 @@
     "convert:solution-assets": "node scripts/convert-solution-assets.mjs"
   },
   "dependencies": {
+    "hls.js": "^1.6.17",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -27,8 +28,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "sharp": "^0.34.2",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "sharp": "^0.34.2"
+    "typescript": "^5"
   }
 }

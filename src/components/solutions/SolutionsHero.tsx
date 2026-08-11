@@ -1,6 +1,13 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
+import { solutionsHeroVideo } from "@/data/heroVideos";
+
+const AdaptiveBackgroundVideo = dynamic(
+  () => import("@/components/AdaptiveBackgroundVideo"),
+  { ssr: false },
+);
 
 const SolutionsHero = () => {
   return (
@@ -41,16 +48,13 @@ const SolutionsHero = () => {
         }
       `}} />
 
-      {/* Background video */}
+      {/* Background video (adaptive HLS) */}
       <div style={{
         position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0
       }}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <AdaptiveBackgroundVideo
+          src={solutionsHeroVideo.src}
+          poster={solutionsHeroVideo.poster}
           aria-label="Background video"
           style={{
             position: 'absolute',
@@ -65,12 +69,7 @@ const SolutionsHero = () => {
             border: 'none',
             objectFit: 'cover',
           }}
-        >
-          <source
-            src="https://objectstorage.me-dubai-1.oraclecloud.com/n/axkcoovttfwl/b/bucket-dockploy/o/traverse-assets%2Ftrverse-solution-page-web-banner.mp4"
-            type="video/mp4"
-          />
-        </video>
+        />
         {/* Dark overlay to ensure text readability */}
         <div style={{
           position: 'absolute', inset: 0,

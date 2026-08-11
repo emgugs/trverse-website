@@ -1,8 +1,13 @@
 "use client";
 
 import React from 'react';
+import dynamic from "next/dynamic";
+import { homeHeroVideo } from "@/data/heroVideos";
 
-const HERO_VIDEO_SRC = "/video/trverse-web-banner-latest-version.mp4";
+const AdaptiveBackgroundVideo = dynamic(
+  () => import("@/components/AdaptiveBackgroundVideo"),
+  { ssr: false },
+);
 
 const Hero = () => {
   const [loaded, setLoaded] = React.useState(false);
@@ -203,20 +208,13 @@ const Hero = () => {
       ` }} />
 
       <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0 }}>
-        <video
+        <AdaptiveBackgroundVideo
           className="home-hero-video"
-          autoPlay={shouldLoadVideo}
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster="/assets/about-hero-banner.webp"
+          src={homeHeroVideo.src}
+          poster={homeHeroVideo.poster}
+          enabled={shouldLoadVideo}
           aria-hidden
-        >
-          {shouldLoadVideo ? (
-            <source src={HERO_VIDEO_SRC} type="video/mp4" />
-          ) : null}
-        </video>
+        />
         <div style={{
           position: 'absolute', inset: 0,
           background: 'rgba(4, 14, 31, 0.65)',

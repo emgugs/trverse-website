@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import { STATIC_ASSET_CACHE_HEADERS } from "./src/lib/cache-headers";
-import { SECURITY_HEADERS } from "./src/lib/security-headers";
+import { getSecurityHeaders } from "./src/lib/security-headers";
 
 const nextConfig: NextConfig = {
   images: {
@@ -10,10 +10,11 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   async headers() {
+    const isDev = process.env.NODE_ENV === "development";
     return [
       {
         source: "/:path*",
-        headers: SECURITY_HEADERS,
+        headers: getSecurityHeaders(isDev),
       },
       {
         source: "/_next/static/:path*",
@@ -58,6 +59,15 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*.woff2",
         headers: STATIC_ASSET_CACHE_HEADERS,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/video-stream/:path*",
+        destination:
+          "https://objectstorage.me-dubai-1.oraclecloud.com/n/axkcoovttfwl/b/bucket-dockploy/o/trverse/:path*",
       },
     ];
   },
