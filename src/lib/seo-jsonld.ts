@@ -247,6 +247,43 @@ export function breadcrumbJsonLd(items: Array<{ name: string; path?: string }>) 
   };
 }
 
+export function localBusinessJsonLd() {
+  const islamabad = offices.find((o) => o.city === "Islamabad")!;
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareCompany",
+    "@id": `${SITE_URL}/#local-business`,
+    name: ORGANIZATION_NAME,
+    legalName: ORGANIZATION_LEGAL_NAME,
+    url: SITE_URL,
+    logo: absoluteUrl(ORGANIZATION_LOGO_PATH),
+    image: absoluteUrl(ORGANIZATION_LOGO_PATH),
+    description: DEFAULT_DESCRIPTION,
+    telephone: islamabad.phone,
+    email: islamabad.email ?? ORGANIZATION_EMAIL,
+    address: postalAddressFromOffice(islamabad),
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 33.7104,
+      longitude: 73.0582,
+    },
+    hasMap: islamabad.mapUrl,
+    sameAs: [...ORGANIZATION_SOCIAL_PROFILES],
+    parentOrganization: {
+      "@type": "Organization",
+      name: "LMKR",
+      url: "https://lmkr.com",
+    },
+    priceRange: "$$$$",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  };
+}
+
 export function articleJsonLd({
   title,
   description,

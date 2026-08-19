@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Urbanist } from "next/font/google";
 import JsonLd from "@/components/seo/JsonLd";
-import { websiteJsonLd } from "@/lib/seo-jsonld";
+import { websiteJsonLd, localBusinessJsonLd } from "@/lib/seo-jsonld";
 import { DEFAULT_DESCRIPTION, DEFAULT_OG_IMAGE, absoluteUrl } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -68,6 +68,7 @@ export default function RootLayout({
       </head>
       <body>
         <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={localBusinessJsonLd()} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-6015NQ5BW5"
           strategy="lazyOnload"
