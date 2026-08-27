@@ -150,20 +150,30 @@ export default async function InsightDetailPage({ params }: Props) {
                 >
                   {section.heading}
                 </h2>
-                {section.paragraphs.map((p, pIdx) => (
-                  <p
-                    key={`${item.slug}-${idx}-${pIdx}`}
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: 16.5,
-                      color: "#5a6a7e",
-                      lineHeight: 1.85,
-                      margin: "0 0 12px",
-                    }}
-                  >
-                    {p}
-                  </p>
-                ))}
+                {section.paragraphs.map((p, pIdx) => {
+                  const isCta = p.startsWith("Talk to TRVERSE");
+                  return (
+                    <p
+                      key={`${item.slug}-${idx}-${pIdx}`}
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 16.5,
+                        color: "#5a6a7e",
+                        lineHeight: 1.85,
+                        margin: "0 0 12px",
+                        ...(isCta
+                          ? {
+                              fontWeight: 700,
+                              color: "#0a1e3d",
+                              marginTop: 8,
+                            }
+                          : null),
+                      }}
+                    >
+                      {p}
+                    </p>
+                  );
+                })}
 
                 {section.bullets?.length ? (
                   <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "#5a6a7e" }}>
@@ -184,8 +194,8 @@ export default async function InsightDetailPage({ params }: Props) {
           <div style={{ marginTop: 60, paddingTop: 28, borderTop: "1px solid rgba(10, 30, 61, 0.08)" }}>
             <a
               href={item.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={item.sourceUrl.startsWith("http") ? "_blank" : undefined}
+              rel={item.sourceUrl.startsWith("http") ? "noopener noreferrer" : undefined}
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: 14,
@@ -194,7 +204,7 @@ export default async function InsightDetailPage({ params }: Props) {
                 textDecoration: "none",
               }}
             >
-              Source article
+              {item.sourceUrl.includes("get-a-demo") ? "Talk to TRVERSE" : "Source article"}
             </a>
           </div>
         </div>
