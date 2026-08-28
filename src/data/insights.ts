@@ -25,11 +25,11 @@ export const insights: InsightItem[] = [
     slug: "why-tap-your-bank-card-open-loop-fare",
     title: 'Why "Tap Your Bank Card" Is the Biggest Shift in Transit Fare Payment',
     category: "Blog",
-    date: "August 27, 2026",
-    datePublishedIso: "2026-08-27",
+    date: "June 2026",
+    datePublishedIso: "2026-06-30",
     excerpt:
       "Open-loop fare collection lets riders pay with the bank cards and mobile wallets they already carry — removing transit's quiet friction and becoming the standard networks are moving toward worldwide.",
-    image: "/insights/why-tap-your-bank-card-open-loop-fare.webp",
+    image: "/insights/why-tap-your-bank-card-open-loop-fare-june-2026.webp",
     sourceUrl: "/get-a-demo",
     intro:
       "For decades, riding a bus or train meant buying something first: a token, a paper ticket, or a dedicated transit card loaded with credit before you could even reach the platform. That extra step — the queue at a vending machine, the top-up before travel, the card you have to remember to carry — has always been one of the quiet frictions of public transit. Open-loop fare collection removes it entirely, and it's becoming the standard that transit authorities are moving toward worldwide.",
@@ -75,8 +75,8 @@ export const insights: InsightItem[] = [
     slug: "from-reactive-to-predictive-ai-transit",
     title: "From Reactive to Predictive: How AI Is Changing the Way Cities Run Transit",
     category: "Blog",
-    date: "August 27, 2026",
-    datePublishedIso: "2026-08-27",
+    date: "May 2026",
+    datePublishedIso: "2026-05-31",
     excerpt:
       "Modern transit networks are shifting from reactive operations to predictive monitoring — using fare, fleet, and ITS data together to catch problems while they are still small.",
     image: "/insights/from-reactive-to-predictive-ai-transit.webp",
