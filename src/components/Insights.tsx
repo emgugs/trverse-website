@@ -2,12 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { insights } from "@/data/insights";
+import { insightPosts } from "@/data/insights";
 import InsightCardThumbnail from "@/components/insights/InsightCardThumbnail";
 
 const Insights = () => {
   const [visibleCount, setVisibleCount] = React.useState(3);
-  const homeInsights = [...insights]
+  const homeInsights = [...insightPosts]
     .sort((a, b) => new Date(b.datePublishedIso).getTime() - new Date(a.datePublishedIso).getTime())
     .slice(0, 8);
   React.useEffect(() => {

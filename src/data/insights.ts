@@ -380,3 +380,6 @@ export const insights: InsightItem[] = [
     ],
   },
 ];
+
+export const blogPosts = insights.filter((item) => item.category === "Blog");
+export const insightPosts = insights.filter((item) => item.category !== "Blog");

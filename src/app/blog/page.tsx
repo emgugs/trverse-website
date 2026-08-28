@@ -5,48 +5,44 @@ import InsightsHero from "@/components/insights/InsightsHero";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import PageH1 from "@/components/seo/PageH1";
 import JsonLd from "@/components/seo/JsonLd";
-import { insightPosts } from "@/data/insights";
 import InsightsGrid from "@/components/insights/InsightsGrid";
-import CaseStudiesInInsights from "@/components/insights/CaseStudiesInInsights";
-import { caseStudies } from "@/data/caseStudies";
+import { blogPosts } from "@/data/insights";
 import { breadcrumbJsonLd } from "@/lib/seo-jsonld";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Insights",
+  title: "TRVERSE Blog",
   description:
-    "TRVERSE news, awards, case studies, and updates on automated fare collection, BRT deployments, and intelligent transport systems worldwide.",
-  path: "/insights",
-  image: "/assets/case-studies-banner.webp",
+    "TRVERSE perspectives on artificial intelligence, open-loop fare collection, and the future of connected public transit.",
+  path: "/blog",
+  image: blogPosts[0]?.image,
 });
 
-export default function InsightsPage() {
+export default function BlogPage() {
   return (
     <main>
-      <PageH1>Insights and success stories</PageH1>
+      <PageH1>TRVERSE Blog</PageH1>
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", path: "/" },
-          { name: "Insights", path: "/insights" },
+          { name: "Blog", path: "/blog" },
         ])}
       />
       <Nav />
       <InsightsHero
-        badge="Insights Hub"
+        badge="TRVERSE Blog"
         titleAs="p"
-        title="Insights & Success Stories"
-        description="Explore TRVERSE highlights, key updates, and recognition from across the mobility ecosystem."
-        backgroundImageSrc="/assets/case-studies-banner.webp"
-        backgroundImageAlt="TRVERSE insights and industry news"
-        primaryCta={{ label: "Browse articles", href: "#all-insights" }}
-        secondaryCta={{ label: "Get a demo", href: "/get-a-demo" }}
+        title="Ideas shaping the future of transit"
+        description="Practical perspectives on the technology, payments, and intelligence helping cities run better-connected transit networks."
+        backgroundImageSrc="/insights/from-reactive-to-predictive-ai-transit.webp"
+        backgroundImageAlt="City bus moving through a modern transit network at night"
+        primaryCta={{ label: "Read the latest", href: "#all-blog-posts" }}
+        secondaryCta={{ label: "Explore insights", href: "/insights" }}
       />
 
-      <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Insights" }]} />
+      <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
 
-      <CaseStudiesInInsights studies={caseStudies} />
-
-      <section id="all-insights" style={{ background: "#fff", padding: "110px 48px" }}>
+      <section id="all-blog-posts" style={{ background: "#fff", padding: "110px 48px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <span
@@ -61,7 +57,7 @@ export default function InsightsPage() {
                 display: "block",
               }}
             >
-              All Insights
+              Latest from TRVERSE
             </span>
             <h2
               style={{
@@ -72,7 +68,7 @@ export default function InsightsPage() {
                 margin: "0 0 18px",
               }}
             >
-              Latest articles
+              Transit, technology, and what comes next
             </h2>
             <p
               style={{
@@ -84,11 +80,11 @@ export default function InsightsPage() {
                 lineHeight: 1.7,
               }}
             >
-              Select an article to read the full story on TRVERSE.
+              Read TRVERSE perspectives on the systems and ideas transforming public transport.
             </p>
           </div>
 
-          <InsightsGrid items={insightPosts} />
+          <InsightsGrid items={blogPosts} />
         </div>
       </section>
 

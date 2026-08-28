@@ -196,6 +196,7 @@ const Footer = () => (
             links: [
               { label: 'About', href: '/about' },
               { label: 'Partners', href: '/partners' },
+              { label: 'Blog', href: '/blog' },
               { label: 'Insights', href: '/insights' },
               { label: 'Get a demo', href: '/get-a-demo' },
             ],
