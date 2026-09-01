@@ -13,6 +13,18 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+function renderBulletLead(text: string) {
+  const leadMatch = text.match(/^(.+?\.\s+)([\s\S]+)$/);
+  if (!leadMatch) return text;
+
+  return (
+    <>
+      <strong style={{ color: "#0a1e3d", fontWeight: 650 }}>{leadMatch[1]}</strong>
+      {leadMatch[2]}
+    </>
+  );
+}
+
 export function generateStaticParams() {
   return insights.map((item) => ({ slug: item.slug }));
 }
@@ -176,13 +188,28 @@ export default async function InsightDetailPage({ params }: Props) {
                 })}
 
                 {section.bullets?.length ? (
-                  <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "#5a6a7e" }}>
+                  <ul
+                    style={{
+                      margin: "16px 0 0",
+                      paddingLeft: 28,
+                      color: "#5a6a7e",
+                      listStyleType: "disc",
+                      listStylePosition: "outside",
+                    }}
+                  >
                     {section.bullets.map((b, bIdx) => (
                       <li
                         key={`${item.slug}-${idx}-b-${bIdx}`}
-                        style={{ fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.75, margin: "8px 0" }}
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: 16.5,
+                          lineHeight: 1.85,
+                          margin: "0 0 14px",
+                          paddingLeft: 6,
+                          display: "list-item",
+                        }}
                       >
-                        {b}
+                        {renderBulletLead(b)}
                       </li>
                     ))}
                   </ul>

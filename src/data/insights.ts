@@ -32,40 +32,40 @@ export const insights: InsightItem[] = [
     image: "/insights/why-tap-your-bank-card-open-loop-fare-june-2026.webp",
     sourceUrl: "/get-a-demo",
     intro:
-      "For decades, riding a bus or train meant buying something first: a token, a paper ticket, or a dedicated transit card loaded with credit before you could even reach the platform. That extra step — the queue at a vending machine, the top-up before travel, the card you have to remember to carry — has always been one of the quiet frictions of public transit. Open-loop fare collection removes it entirely, and it's becoming the standard that transit authorities are moving toward worldwide.",
+      "For decades, riding a bus or train meant buying something first: a token, a paper ticket, or a dedicated transit card loaded with credit before you could even reach the platform. That extra step, the queue at a vending machine, the top-up before travel, the card you have to remember to carry, has always been one of the quiet frictions of public transit. Open-loop fare collection removes it entirely, and it's becoming the standard that transit authorities are moving toward worldwide.",
     sections: [
       {
         heading: 'What "open-loop" actually means',
         paragraphs: [
-          "A closed-loop fare system only accepts its own proprietary card or token — the kind issued and topped up specifically for that transit network. An open-loop system flips that: it accepts the contactless bank cards, mobile wallets, and payment methods riders already carry in their pockets every day.",
-          "TRVERSE's automated fare collection is built around this principle. The platform accepts EMV cards, contactless payments, and mobile wallet transactions without hardware lock-in, meaning transit authorities aren't tied to a single vendor's proprietary card ecosystem just to collect fares. Passengers tap a bank card, a phone, or a smartwatch at a validator or fare gate, and the system handles authorization, fare calculation, and settlement in real time — the same way a contactless payment works at a retail checkout, adapted for the speed and volume of a transit gateline.",
+          "A closed-loop fare system only accepts its own proprietary card or token: the kind issued and topped up specifically for that transit network. An open-loop system flips that: it accepts the contactless bank cards, mobile wallets, and payment methods riders already carry in their pockets every day.",
+          "TRVERSE's automated fare collection is built around this principle. The platform accepts EMV cards, contactless payments, and mobile wallet transactions without hardware lock-in, meaning transit authorities aren't tied to a single vendor's proprietary card ecosystem just to collect fares. Passengers tap a bank card, a phone, or a smartwatch at a validator or fare gate, and the system handles authorization, fare calculation, and settlement in real time: the same way a contactless payment works at a retail checkout, adapted for the speed and volume of a transit gateline.",
           "The result touches fare collection at every layer: fare validators and handheld validators for on-board collection, point-of-sale terminals for staffed counters, fare gates for controlled station access, and ticket vending machines for riders who still prefer to buy a physical ticket. All of it feeds into a central system that lets an operator apply and adjust tariff policy in real time, rather than reprogramming hardware at each device individually.",
         ],
       },
       {
         heading: "Why this matters more than it sounds",
         paragraphs: [
-          "The case for open-loop payment isn't just convenience — it changes the economics and security of running a fare system.",
+          "The case for open-loop payment isn't just convenience; it changes the economics and security of running a fare system.",
         ],
         bullets: [
-          "Reduced fraud and theft losses. When cash and physical tokens move through a network of vending machines, farebox operators, and human handlers, there are multiple points where revenue can leak — through fraud, theft, or simple human error. Digital, card-based payment narrows that surface considerably, since the transaction is authorized and recorded electronically rather than handled as physical currency.",
-          "Controlled flow of funds. Real-time transaction data means operators can see revenue as it's collected rather than reconciling it after the fact, which is a meaningful shift for authorities used to end-of-month or end-of-quarter reporting cycles.",
-          "Improved passenger service quality. Riders don't need to learn a new payment system, carry a separate card, or worry about a balance running out mid-journey — they use money they already have, in a wallet they're already carrying.",
-          "Contactless payment, at scale, without new hardware for every payment network. Because the fare system is built to work with multiple payment modes — mobile, card, and cash — authorities aren't locked into supporting only one issuer or one card scheme.",
+          "Reduced fraud and theft losses. When cash and physical tokens move through a network of vending machines, farebox operators, and human handlers, there are multiple points where revenue can leak: through fraud, theft, or simple human error. Digital, card-based payment narrows that surface considerably, since the transaction is authorized and recorded electronically rather than handled as physical currency.",
+          "Controlled flow of funds. Real-time transaction data means operators can see revenue as it's collected, rather than reconciling it after the fact, which is a meaningful shift for authorities used to end-of-month or end-of-quarter reporting cycles.",
+          "Improved passenger service quality. Riders don't need to learn a new payment system, carry a separate card, or worry about a balance running out mid-journey; they use money they already have, in a wallet they're already carrying.",
+          "Contactless payment, at scale, without new hardware for every payment network. Because the fare system is built to work with multiple payment modes, mobile, card, and cash, authorities aren't locked into supporting only one issuer or one card scheme.",
         ],
       },
       {
         heading: "Proof at BRT scale",
         paragraphs: [
-          "This isn't a theoretical benefit — it's already running on live networks. On Pakistan's Islamabad–Rawalpindi MetroBus, the flagship 22.5 km intercity BRT corridor connecting the two cities across 24 stations, TRVERSE delivered the automated fare collection system along with the payment application development and the Mastercard and Visa certifications required to accept those cards for cashless journeys at scale. Certification isn't a formality — it means the fare system meets the security and interoperability standards that global card networks require before a transit operator can accept their cards directly at the gate.",
+          "This isn't a theoretical benefit; it's already running on live networks. On Pakistan's Islamabad-Rawalpindi MetroBus, the flagship 22.5 km intercity BRT corridor connecting the two cities across 24 stations, TRVERSE delivered the automated fare collection system, along with the payment application development and the Mastercard and Visa certifications required to accept those cards for cashless journeys at scale. Certification isn't a formality; it means the fare system meets the security and interoperability standards that global card networks require before a transit operator can accept their cards directly at the gate.",
           "The same open-payment approach underpins the partnership between LMKR, Mastercard, and the Bank of Khyber under the Mastercard Transit Partner Program Agreement, aimed at advancing Pakistan's transit landscape and extending open-loop payment capability to more networks.",
-          "And the operational upside compounds with ridership. On the Peshawar BRT network, which carries over 220,000 passengers daily, moving to automated, real-time fare collection was central to reducing fare evasion from over 22% to under 4% — a result that would be far harder to achieve, let alone sustain, with cash- and token-based collection at that volume.",
+          "And the operational upside compounds with ridership. On the Peshawar BRT network, which carries over 220,000 passengers daily, moving to automated, real-time fare collection was central to reducing fare evasion from over 22% to under 4%: a result that would be far harder to achieve, let alone sustain, with cash- and token-based collection at that volume.",
         ],
       },
       {
         heading: "The direction transit fare payment is heading",
         paragraphs: [
-          "Open-loop, contactless fare collection is no longer an emerging idea in mass transit — it's the direction the industry has already committed to, from major global metros to fast-growing BRT networks across South Asia and the Middle East. For transport authorities weighing how to modernize fare collection, the more immediate question isn't whether to move to open-loop payment, but how to do it as part of a connected system — one where fare data feeds directly into fleet management, scheduling, and network-wide analytics, instead of sitting in a payment silo of its own.",
+          "Open-loop, contactless fare collection is no longer an emerging idea in mass transit; it's the direction the industry has already committed to, from major global metros to fast-growing BRT networks across South Asia and the Middle East. For transport authorities weighing how to modernize fare collection, the more immediate question isn't whether to move to open-loop payment, but how to do it as part of a connected system: one where fare data feeds directly into fleet management, scheduling, and network-wide analytics, instead of sitting in a payment silo of its own.",
           "Talk to TRVERSE about bringing open-loop, EMV-certified fare collection to your network.",
         ],
       },
