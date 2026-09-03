@@ -28,7 +28,7 @@ export const insights: InsightItem[] = [
     date: "June 2026",
     datePublishedIso: "2026-06-30",
     excerpt:
-      "Open-loop fare collection lets riders pay with the bank cards and mobile wallets they already carry — removing transit's quiet friction and becoming the standard networks are moving toward worldwide.",
+      "Open-loop fare collection lets riders pay with the bank cards and mobile wallets they already carry, removing transit's quiet friction and becoming the standard networks are moving toward worldwide.",
     image: "/insights/why-tap-your-bank-card-open-loop-fare-june-2026.webp",
     sourceUrl: "/get-a-demo",
     intro:
@@ -78,18 +78,18 @@ export const insights: InsightItem[] = [
     date: "May 2026",
     datePublishedIso: "2026-05-31",
     excerpt:
-      "Modern transit networks are shifting from reactive operations to predictive monitoring — using fare, fleet, and ITS data together to catch problems while they are still small.",
+      "Modern transit networks are shifting from reactive operations to predictive monitoring, using fare, fleet, and ITS data together to catch problems while they are still small.",
     image: "/insights/from-reactive-to-predictive-ai-transit.webp",
     sourceUrl: "/get-a-demo",
     intro:
-      "For most of its history, mass transit has been run reactively. A bus breaks down and maintenance finds out when the driver calls it in. Fare evasion is caught in a monthly audit, months after the revenue is already gone. A route starts underperforming and nobody notices until ridership numbers come in at quarter's end. By the time the problem is visible, it has already cost money, service reliability, or passenger trust. The shift happening across modern transit networks is a move from this reactive model to a predictive one — using the data a network already generates to catch problems while they're still small.",
+      "For most of its history, mass transit has been run reactively. A bus breaks down, and maintenance finds out when the driver calls it in. Fare evasion is caught in a monthly audit, months after the revenue is already gone. A route starts underperforming, and nobody notices until ridership numbers come in at quarter's end. By the time the problem is visible, it has already cost money, service reliability, or passenger trust. The shift happening across modern transit networks is a move from this reactive model to a predictive one, using the data a network already generates to catch problems while they're still small.",
     sections: [
       {
         heading: "Every transit network is already talking to itself",
         paragraphs: [
           "A city bus network generates a constant stream of data: every tap of a card at a validator, every GPS ping from a vehicle, every gateline transaction, every dispatch event. Individually, these are just operational logs. Together, they're a live picture of how the network is actually behaving versus how it's supposed to behave.",
-          "The problem most transit authorities face isn't a lack of data — it's that the data lives in disconnected systems. Fare collection sits in one platform, fleet tracking in another, scheduling in a third. By the time someone manually cross-references them, the moment to act has passed.",
-          "This is the gap TRVERSE is built to close. As part of a single platform connecting automated fare collection, intelligent transport systems, fleet management, and AI monitoring, TRVERSE analyses fare, fleet, passenger, and system data together — not in silos — to surface anomalies, predict failures, and recommend interventions before problems escalate into service disruptions or revenue loss.",
+          "The problem most transit authorities face isn't a lack of data; it's that the data lives in disconnected systems. Fare collection sits in one platform, fleet tracking in another, scheduling in a third. By the time someone manually cross-references them, the moment to act has passed.",
+          "This is the gap TRVERSE is built to close. As part of a single platform connecting automated fare collection, intelligent transport systems, fleet management, and AI monitoring, TRVERSE analyses fare, fleet, passenger, and system data together, not in silos, to surface anomalies, predict failures, and recommend interventions before problems escalate into service disruptions or revenue loss.",
         ],
       },
       {
@@ -99,7 +99,7 @@ export const insights: InsightItem[] = [
         ],
         bullets: [
           "Real-time network health scoring gives operators a single composite KPI across fare, fleet, and ITS components, instead of forcing a control room to piece together status from five different screens.",
-          "Anomaly detection works by learning what \"normal\" looks like for a given corridor, vehicle, or fare gate, then flagging statistical deviations — a validator with an unusual failure rate, a route drifting off its typical dwell times — before they compound into bigger issues.",
+          "Anomaly detection works by learning what \"normal\" looks like for a given corridor, vehicle, or fare gate, then flagging statistical deviations, such as a validator with an unusual failure rate or a route drifting off its typical dwell times, before they compound into bigger issues.",
           "Revenue leakage detection applies pattern recognition across transaction and gateline data to catch fare evasion trends that would otherwise only surface in a manual audit.",
           "Predictive maintenance alerts use vehicle and infrastructure telemetry to flag likely faults before a vehicle actually fails on route, which is the difference between a scheduled repair and a stranded bus during peak hours.",
           "A natural language query interface lets operations staff ask questions of their data directly, rather than waiting on a report to be built.",
@@ -110,15 +110,15 @@ export const insights: InsightItem[] = [
         paragraphs: [
           "None of this is hypothetical. It's the same category of problem transit authorities deal with every day: fare evasion, breakdowns, delayed reporting, and disconnected fleet data that make it harder to improve reliability and respond to passengers in real time.",
           "The value of predictive monitoring compounds as a network grows. A single-route operator can often manage with manual oversight. A network carrying hundreds of thousands of passengers a day across dozens of stations cannot.",
-          "That's the environment TRVERSE was built for. The Peshawar BRT network, delivered with TransPeshawar, now carries over 220,000 passengers daily. On that network, real-time operational intelligence combined with automated fare collection helped bring fare evasion down from over 22% to under 4% — a result that would be extremely difficult to sustain through manual auditing alone at that ridership level. It's also the kind of result that has drawn international recognition, including Best Smart Ticketing Programme honors at Transport Ticketing Global and finalist status at the Decarbonising Transport Awards for public engagement.",
-          "The same connected approach underpins the Islamabad–Rawalpindi MetroBus, Pakistan's flagship intercity BRT corridor spanning 22.5 km and 24 stations, and the newer Masar Electric BRT in Makkah, Saudi Arabia — the first electric BRT network at the Masar Destination, aligned with Saudi Arabia's sustainability goals.",
+          "That's the environment TRVERSE was built for. The Peshawar BRT network, delivered with TransPeshawar, now carries over 220,000 passengers daily. On that network, real-time operational intelligence combined with automated fare collection helped bring fare evasion down from over 22% to under 4%, a result that would be extremely difficult to sustain through manual auditing alone at that ridership level. It's also the kind of result that has drawn international recognition, including Best Smart Ticketing Programme honors at Transport Ticketing Global and finalist status at the Decarbonising Transport Awards for public engagement.",
+          "The same connected approach underpins the Islamabad-Rawalpindi MetroBus, Pakistan's flagship intercity BRT corridor spanning 22.5 km and 24 stations, and the newer Masar Electric BRT in Makkah, Saudi Arabia, the first electric BRT network at the Masar Destination, aligned with Saudi Arabia's sustainability goals.",
         ],
       },
       {
         heading: "The bigger shift: fare, fleet, and AI as one system",
         paragraphs: [
-          "The reason predictive monitoring works well on these networks isn't the AI layer in isolation — it's that the AI layer sits on top of fare collection, ITS, scheduling, and fleet data that are already unified. An anomaly detection engine is only as good as the data feeding it, and data that's fragmented across systems produces predictions with blind spots.",
-          "This is the core argument for treating fare collection, intelligent transport systems, fleet management, and AI monitoring as one connected platform rather than separate procurements stitched together after the fact. When a fare anomaly, a vehicle fault, and a scheduling gap can all be seen against the same operational timeline, an operator isn't just reacting faster — they're seeing the actual relationships between problems that used to look unrelated.",
+          "The reason predictive monitoring works well on these networks isn't the AI layer in isolation; it's that the AI layer sits on top of fare collection, ITS, scheduling, and fleet data that are already unified. An anomaly detection engine is only as good as the data feeding it, and data that's fragmented across systems produces predictions with blind spots.",
+          "This is the core argument for treating fare collection, intelligent transport systems, fleet management, and AI monitoring as one connected platform rather than separate procurements stitched together after the fact. When a fare anomaly, a vehicle fault, and a scheduling gap can all be seen against the same operational timeline, an operator isn't just reacting faster; they're seeing the actual relationships between problems that used to look unrelated.",
           "For transport authorities, city governments, and private operators managing network-scale systems, that's the practical promise of predictive, AI-driven transit: fewer surprises, faster response, and a system that gets better at flagging its own problems the longer it runs.",
           "Talk to TRVERSE about how a connected fare, fleet, and AI platform could work for your network.",
         ],
